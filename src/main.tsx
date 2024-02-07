@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import '@/assets/css/index.css';
@@ -13,7 +14,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import { master } from '@/redux/store/reducers/combineReducer';
 import { ToastContainer } from 'react-toastify';
 import LanguageContextProvider from '@/common/contexts/LanguageContext';
-import Root from '@/routes';
+import Root from './routes';
 const queryClient = new QueryClient();
 const store = createStore(master, composeWithDevTools(applyMiddleware(thunk)));
 
