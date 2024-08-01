@@ -3,12 +3,14 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import useTranslation from '@/common/customHooks/translations';
 import { useLanguageContext } from '@/common/contexts/LanguageContext';
-
+import axios from 'axios';
 
 function LandingPage() {
-  let navigate = useNavigate()
-  const t = useTranslation()
-  const { language, changeLanguage } = useLanguageContext()
+  const [data, setData] = React.useState(null);
+
+  let navigate = useNavigate();
+  const t = useTranslation();
+  const { language, changeLanguage } = useLanguageContext();
   return (
     <div>
       <div>
@@ -35,7 +37,7 @@ function LandingPage() {
         {t.welcome} <i class='fas fa-home'></i>s
       </button>
     </div>
-  )
+  );
 }
 
 export default LandingPage;
